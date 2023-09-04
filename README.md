@@ -1,3 +1,5 @@
+The subscriptions page on Youtube does not show you all of the published videos of all of your subscribed channels. It picks and chooses using its algorithm to decide what it thinks you want to watch. The app will simply show you a chronological list of all of the videos published by the channels you subscribe to.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
