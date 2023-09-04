@@ -2,6 +2,7 @@
   "name": "better-youtube-subscriptions",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://philiprlarie.github.io/better-youtube-subscriptions",
   "dependencies": {
     "@tanstack/react-query": "^4.33.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -11,6 +12,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "gh-pages": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -23,7 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint . --ext ts,tsx,js,jsx"
+    "lint": "eslint . --ext ts,tsx,js,jsx",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
