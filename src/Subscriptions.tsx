@@ -1,23 +1,9 @@
 import React from 'react'
 
-import { useQuery } from '@tanstack/react-query'
-
-import { useAuth } from './resources/auth'
-import { getSubscriptions } from './resources/youtube'
+import { useSubscriptions } from './useSubscriptions'
 
 function Subscriptions() {
-  const { accessToken } = useAuth()
-
-  console.log(accessToken)
-  const subscriptionsQuery = useQuery(
-    ['SUBSCRIPTIONS_QUERY'],
-    () => {
-      return getSubscriptions(accessToken!)
-    },
-    {
-      enabled: !!accessToken,
-    },
-  )
+  const subscriptionsQuery = useSubscriptions()
 
   if (!subscriptionsQuery.data) {
     return <div>loading...</div>
@@ -25,7 +11,7 @@ function Subscriptions() {
 
   return (
     <div>
-      {subscriptionsQuery.data.items.map((item) => (
+      {subscriptionsQuery.data.map((item) => (
         <SubscriptionDisplay
           key={item.id}
           title={item.snippet.title}
